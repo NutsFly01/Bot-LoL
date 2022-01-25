@@ -15,6 +15,7 @@
     "fd": "^0.0.3",
     "fs": "^0.0.1-security",
     "node-cron": "^3.0.0",
+    "nodemon": "^2.0.15",
     "riot-lol-api": "^4.3.4"
   }
 }

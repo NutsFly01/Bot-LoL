@@ -1,1 +1,16 @@
-{"participants":[{"name":"Zboubozaure","lastmatch":"x"},{"name":"Kinemon","lastmatch":"a"},{"name":"Meín Kampf","lastmatch":"x"}]}
+{
+    "participants": [
+        {
+            "name": "Zboubozaure",
+            "lastmatch": "x"
+        },
+        {
+            "name": "Kinemon",
+            "lastmatch": "a"
+        },
+        {
+            "name": "Meín Kampf",
+            "lastmatch": "x"
+        }
+    ]
+}
