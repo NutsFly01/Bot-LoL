@@ -18,5 +18,8 @@
     "node-cron": "^3.0.0",
     "nodemon": "^2.0.15",
     "riot-lol-api": "^4.3.4"
+  },
+  "scripts":{
+    "start": "node index.js"
   }
 }
