@@ -3,7 +3,6 @@ import fs from "fs";
 import cron from "node-cron";
 import dotenv from "dotenv";
 
-
 dotenv.config();
 
 const Client = new Discord.Client({
@@ -18,7 +17,8 @@ Client.on("ready", () => {
     console.log("bot on");
 });
 
-cron.schedule('* */5 * * * *', () => {
+//tache tout les 1 min (* * * * * * => min heure jour semaine (jour de semaine))
+cron.schedule('*/1 * * * *', () => {
         //appeler la fonction qui check les loosers
 
 
