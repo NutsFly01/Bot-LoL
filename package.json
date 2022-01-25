@@ -12,6 +12,7 @@
   "type": "module",
   "dependencies": {
     "@fightmegg/riot-api": "^0.0.8",
+    "dotenv": "^14.3.0",
     "fd": "^0.0.3",
     "fs": "^0.0.1-security",
     "node-cron": "^3.0.0",

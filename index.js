@@ -1,6 +1,10 @@
 import Discord from "discord.js";
 import fs from "fs";
 import cron from "node-cron";
+import dotenv from "dotenv";
+
+
+dotenv.config();
 
 const Client = new Discord.Client({
     intents: [
@@ -64,4 +68,4 @@ Client.on("messageCreate", message => {
 
 
 
-Client.login("OTM1MTk2NzY3NjAxOTUwNzcx.Ye7H3A.bHCyoUtqmcPe9Fd_a0subMcb_ZI");
+Client.login(process.env.BOT_TOKEN);

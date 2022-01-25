@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import fs from "fs";
 
 var name1 = "Zboubozaure";
-var api_key1="RGAPI-16de5d44-4ccf-43d1-814d-60244e828769"
+var api_key1=process.env.API_LOL_TOKEN;
 
 async function ajoutUser(name, last) {
     let rawdata = fs.readFileSync('looser.json');
