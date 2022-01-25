@@ -14,12 +14,18 @@ Client.on("ready", () => {
     console.log("bot on");
 });
 
+cron.schedule('* */5 * * * *', () => {
+        const channel = Client.channels.cache.find(channel => channel.name === "general");
+        
 
+        channel.send("message");
 
-cron.schedule('30 * * * *', function() {
-    console.log('running a task every minute');
-    message.channel.send("ca fait 10 sec");
   });
+  
+  // When you want to start it, use:
+  //scheduledUpdate.start();
+  // You could also make a command to pause and resume the job
+  
 
 
 
@@ -60,5 +66,8 @@ Client.on("messageCreate", message => {
     }
         console.log()
 })
+
+
+
 
 Client.login("OTM1MTk2NzY3NjAxOTUwNzcx.Ye7H3A.bHCyoUtqmcPe9Fd_a0subMcb_ZI");
