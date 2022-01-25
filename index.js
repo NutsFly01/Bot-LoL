@@ -22,7 +22,7 @@ Client.on("ready", () => {
 
 cron.schedule('*/10 * * * * *', async() => {
         //appeler la fonction qui check les loosers
-
+    
         console.log("check");
         const list1 = getlist();
         list1.then((result) => {   result.forEach(element => {
