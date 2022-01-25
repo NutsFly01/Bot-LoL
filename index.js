@@ -25,7 +25,7 @@ Client.on("ready", () => {
 cron.schedule('*/5 * * * * *', async() => {
         //appeler la fonction qui check les loosers
 
-        //console.log("check");
+        console.log("check");
         const list1 = getlist();
         list1.then((result) => {   result.forEach(element => {
             //console.log("check de "+ element);
@@ -33,7 +33,7 @@ cron.schedule('*/5 * * * * *', async() => {
             
             loose.then(result => {  
                 
-                if(!result){
+                if(result){
 
                 const channel = Client.channels.cache.find(channel => channel.name === "general");
                 channel.send(element + " a perdu sa game de League of Legends");
@@ -83,9 +83,8 @@ Client.on("messageCreate", message => {
 
 
 
-        message.channel.send("c'est lu")
+        message.channel.send("c'est ajouté !")
     }
-        console.log()
 })
 
 
