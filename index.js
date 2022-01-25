@@ -15,19 +15,13 @@ Client.on("ready", () => {
 });
 
 cron.schedule('* */5 * * * *', () => {
-        const channel = Client.channels.cache.find(channel => channel.name === "general");
-        
+        //appeler la fonction qui check les loosers
 
-        channel.send("message");
+
+        const channel = Client.channels.cache.find(channel => channel.name === "general");
+        channel.send("message qui doit dire la defaite du mec");
 
   });
-  
-  // When you want to start it, use:
-  //scheduledUpdate.start();
-  // You could also make a command to pause and resume the job
-  
-
-
 
 
 Client.on("messageCreate", message => {

@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import fs from "fs";
 
 var name1 = "Zboubozaure";
-var api_key1="RGAPI-4826b4ba-c319-44bd-af23-e0c07ac8b6d2"
+var api_key1="RGAPI-16de5d44-4ccf-43d1-814d-60244e828769"
 
 async function ajoutUser(name, last) {
     let rawdata = fs.readFileSync('looser.json');
@@ -16,13 +16,10 @@ async function ajoutUser(name, last) {
             fs.writeFile('looser.json', newJson, err => {
             // error checking
             if(err) throw err;
-            
             console.log("data modified");
         });   
-
         }
     }else{
-
         let newData = {
             "name": name,
             "lastmatch": last
@@ -34,7 +31,6 @@ async function ajoutUser(name, last) {
         fs.writeFile('looser.json', newJson, err => {
             // error checking
             if(err) throw err;
-            
             console.log("New data added");
         });   
     }
@@ -49,7 +45,6 @@ async function readMatch(name){
     if(looser!=undefined){
         return looser;
     }
-
 }
 
 async function getPuuid(name,api_key) {
@@ -62,12 +57,12 @@ async function getPuuid(name,api_key) {
     const test = readMatch("Kinemon");
     //ajoutUser("Kinemon","a");
     //console.log(test.participants);
-    if(lastMatch[0]!=stockmatch){
+    //if(lastMatch[0]!=stockmatch){
     const resmatch = await fetch("https://europe.api.riotgames.com/lol/match/v5/matches/"+lastMatch[0]+"?api_key="+api_key)
     const match = await resmatch.json();
         return match;
     
-    }
+    //}
     //else{
     //    return ggwin;
     //}
@@ -78,5 +73,5 @@ const pd = await getPuuid(name1,api_key1);
 
 var player = pd.info.participants.find(player => player.summonerName==="Zboubozaure");
 
-//console.log(player.win);
+console.log(player.win);
 
