@@ -2,6 +2,9 @@ import Discord from "discord.js";
 import fs from "fs";
 import cron from "node-cron";
 import dotenv from "dotenv";
+import { getlist, checklastmatch } from "./lolapi.js";
+import { ok } from "assert";
+
 
 dotenv.config();
 
@@ -18,13 +21,33 @@ Client.on("ready", () => {
 });
 
 //tache tout les 1 min (* * * * * * => min heure jour semaine (jour de semaine))
-cron.schedule('*/1 * * * *', () => {
+
+cron.schedule('*/5 * * * * *', async() => {
         //appeler la fonction qui check les loosers
 
+        //console.log("check");
+        const list1 = getlist();
+        list1.then((result) => {   result.forEach(element => {
+            //console.log("check de "+ element);
+            const loose = checklastmatch(element);
+            
+            loose.then(result => {  
+                
+                if(!result){
 
-        const channel = Client.channels.cache.find(channel => channel.name === "general");
-        channel.send("message qui doit dire la defaite du mec");
+                const channel = Client.channels.cache.find(channel => channel.name === "general");
+                channel.send(element + " a perdu sa game de League of Legends");
 
+                }     
+            }).catch((error) => {     console.log("Error", error); })
+        });  }).catch((error) => {     console.log("Error", error); })
+
+
+        //console.log(list1);
+
+        
+
+        console.log("fin du check");
   });
 
 
