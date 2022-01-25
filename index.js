@@ -3,8 +3,6 @@ import fs from "fs";
 import cron from "node-cron";
 import dotenv from "dotenv";
 import { getlist, checklastmatch } from "./lolapi.js";
-import { ok } from "assert";
-
 
 dotenv.config();
 
@@ -52,6 +50,7 @@ cron.schedule('*/10 * * * * *', async() => {
 
 
 Client.on("messageCreate", message => {
+    console.log("message");
     if(message.author.bot || !message.content.startsWith(prefix)) return;
 
 
@@ -78,10 +77,6 @@ Client.on("messageCreate", message => {
                 console.log("New data added");
             });   
         }
-        
-
-
-
 
         message.channel.send("c'est ajouté !")
     }
