@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,14 +13,12 @@
   "type": "module",
   "dependencies": {
     "@fightmegg/riot-api": "^0.0.8",
+    "discord.js": "^13.6.0",
     "dotenv": "^14.3.0",
     "fd": "^0.0.3",
     "fs": "^0.0.1-security",
     "node-cron": "^3.0.0",
     "nodemon": "^2.0.15",
     "riot-lol-api": "^4.3.4"
-  },
-  "scripts":{
-    "start": "node index.js"
   }
 }
