@@ -22,11 +22,11 @@ Client.on("ready", () => {
 
 cron.schedule('*/10 * * * * *', async() => {
         //appeler la fonction qui check les loosers
-    
-        console.log("check");
+
+        //console.log("check");
         const list1 = getlist();
         list1.then((result) => {   result.forEach(element => {
-            //console.log("check de "+ element);
+            console.log("check de "+ element);
             const loose = checklastmatch(element);
             
             loose.then(result => {  
@@ -36,6 +36,8 @@ cron.schedule('*/10 * * * * *', async() => {
                 const channel = Client.channels.cache.find(channel => channel.name === "general");
                 channel.send(element + " a perdu sa game de League of Legends");
 
+                }else{
+                    console.log(element+" a gagner la game");
                 }     
             }).catch((error) => {     console.log("Error", error); })
         });  }).catch((error) => {     console.log("Error", error); })
@@ -45,7 +47,7 @@ cron.schedule('*/10 * * * * *', async() => {
 
         
 
-        console.log("fin du check");
+        //console.log("fin du check");
   });
 
 

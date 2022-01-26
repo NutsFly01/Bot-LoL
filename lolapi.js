@@ -15,6 +15,7 @@ async function ajoutUser(name, last) {
         if (last != looser.lastmatch) {
             looser.lastmatch = last;
             var newJson = JSON.stringify(loosers);
+            console.log(loosers);
             fs.writeFile('looser.json', newJson, err => {
                 // error checking
                 if (err) throw err;
@@ -28,7 +29,7 @@ async function ajoutUser(name, last) {
         }
 
         loosers.participants.push(newData);
-        //console.log(loosers);
+        console.log(loosers);
         var newJson = JSON.stringify(loosers);
         fs.writeFile('looser.json', newJson, err => {
             // error checking
@@ -60,15 +61,14 @@ export async function checklastmatch(name) {
 
         const test = await readMatch(name);
         //console.log("on est la " +test+ " "+ lastMatch[0]);
-
-        if (lastMatch[0] != test) {
+        
+        if (lastMatch[0] != test){
             //console.log("ca check ici");
             const resmatch = await fetch("https://europe.api.riotgames.com/lol/match/v5/matches/" + lastMatch[0] + "?api_key=" + api_key)
             const match = await resmatch.json();
             ajoutUser(name, lastMatch[0]);
             var player = match.info.participants.find(player => player.summonerName === name);
-            console.log(player.win);
-
+            console.log("gagne ? "+ name +" "+ player.win);
             
             return !player.win;
 
