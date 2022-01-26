@@ -56,7 +56,7 @@ export async function checklastmatch(name) {
     if (reponse.status == 200) {
         const account = await reponse.json();
 
-        const reslmatch = await fetch("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + account.puuid + "/ids?type=ranked&start=3&count=4&api_key=" + api_key);
+        const reslmatch = await fetch("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + account.puuid + "/ids?type=ranked&start=0&count=1&api_key=" + api_key);
         const lastMatch = await reslmatch.json();
 
         const test = await readMatch(name);
