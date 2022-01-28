@@ -92,5 +92,14 @@ export async function getlist() {
     return array1;
 }
 
+export async function findlastmatch(name) {
+    let rawdata = fs.readFileSync('looser.json');
+    let loosers = JSON.parse(rawdata);
+    
+    var player = loosers.participants.find(player => player.name === name);
+
+    return player.lastmatch;
+}
+
 
 
