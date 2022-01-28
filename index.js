@@ -24,7 +24,7 @@ Client.on("ready", () => {
 
 //tache tout les 1 min (* * * * * * => min heure jour semaine (jour de semaine))
 
-cron.schedule('*/30 * * * * *', async () => {
+cron.schedule('*/10 * * * * *', async () => {
     //appeler la fonction qui check les loosers
 
     console.log("check");

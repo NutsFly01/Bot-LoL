@@ -7,7 +7,7 @@ dotenv.config();
 var api_key = process.env.API_LOL_TOKEN;
 
 async function ajoutUser(name, last) {
-    let rawdata = fs.readFileSync('looser.json');
+    let rawdata = fs.readFileSync('./looser.json','utf8');
     let loosers = JSON.parse(rawdata);
     //console.log(loosers);
     var looser = loosers.participants.find(player => player.name === name);
@@ -41,7 +41,7 @@ async function ajoutUser(name, last) {
 
 
 async function readMatch(name) {
-    let rawdata = fs.readFileSync('looser.json');
+    let rawdata = fs.readFileSync('./looser.json','utf8');
     let loosers = JSON.parse(rawdata);
     //console.log(loosers);
     var looser = loosers.participants.find(player => player.name === name);
@@ -82,7 +82,7 @@ export async function checklastmatch(name) {
 }
 
 export async function getlist() {
-    let rawdata = fs.readFileSync('looser.json');
+    let rawdata = fs.readFileSync('./looser.json', 'utf8');
     let loosers = JSON.parse(rawdata);
     let array1 = [];
     //console.log("recuperation de liste");
@@ -93,7 +93,7 @@ export async function getlist() {
 }
 
 export async function findlastmatch(name) {
-    let rawdata = fs.readFileSync('looser.json');
+    let rawdata = fs.readFileSync('./looser.json','utf8');
     let loosers = JSON.parse(rawdata);
     
     var player = loosers.participants.find(player => player.name === name);
