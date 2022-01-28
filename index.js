@@ -89,9 +89,9 @@ Client.on("messageCreate", message => {
 
                 console.log("New data added");
             });
-            message.channel.send("c'est ajouté !");
+            message.react("👍");
         } else {
-            message.channel.send("il est deja tracké");
+            message.channel.send("il est déjà tracké");
         }
 
 
@@ -122,9 +122,9 @@ Client.on("messageCreate", message => {
                 console.log("New data added");
             });
 
-            message.channel.send("Il est ete retiré !");
+            message.react("👍");
         } else {
-            message.channel.send("Il n'est pas dedans !");
+            message.channel.send("Il n'est pas dans la liste !");
         }
 
 
