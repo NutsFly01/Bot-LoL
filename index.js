@@ -17,8 +17,8 @@ const prefix = "!";
 
 Client.on("ready", () => {
     console.log("bot on");
-    const channel = Client.channels.cache.find(channel => channel.name === "general");
-    channel.send("Je suis la, bande de merde");
+    //const channel = Client.channels.cache.find(channel => channel.name === "general");
+    //channel.send("Je suis la, bande de merde");
 
 });
 
