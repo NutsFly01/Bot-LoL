@@ -4,6 +4,7 @@ import cron from "node-cron";
 import dotenv from "dotenv";
 import { getlist, checklastmatch, findlastmatch } from "./lolapi.js";
 
+
 dotenv.config();
 
 const Client = new Discord.Client({
