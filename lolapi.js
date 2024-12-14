@@ -2,6 +2,8 @@ import fetch from "node-fetch";
 import fs from "fs";
 import dotenv from "dotenv";
 
+//test 
+
 dotenv.config();
 
 var api_key = process.env.API_LOL_TOKEN;
