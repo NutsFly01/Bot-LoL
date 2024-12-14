@@ -4,7 +4,7 @@ import cron from "node-cron";
 import dotenv from "dotenv";
 import { getlist, checklastmatch, findlastmatch } from "./lolapi.js";
 
-//ca fait quoi si je fais ca ? 
+//ca fait quoi si je fais ca ? je sais pas 
 //test de git je comprend rien     
 
 dotenv.config();
